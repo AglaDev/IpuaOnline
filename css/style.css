@@ -1,0 +1,77 @@
+*{
+	padding: 0;
+	margin: 0;
+	box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+}
+img{width: 100%}
+ul{list-style: none}
+a{text-decoration: none}
+
+.font-o{
+	font-family: 'Open Sans', sans-serif;
+}
+.font-r{
+	font-family: 'Roboto', sans-serif;
+}
+/*CABECALHO*/
+.container{
+	padding: 0 30px;
+}
+.container-cabecalho{
+	box-shadow: 1px 1px 2px #00AAFF;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+
+#logo{
+	width: 160px;
+	height: 56px;
+	font-size: 0;
+	background:url(../img/logo.png) no-repeat center/ 160px;
+}
+
+.btn-menu{
+	width: 35px;
+	height: 33px;
+	background-color: #fff;
+	cursor: pointer;
+	padding:2px;
+	display: flex;
+	justify-content: space-around;
+	flex-direction: column;
+}
+
+.btn-menu .linha{
+	width: 100%;
+	height: 4px;
+	background-color: #3c4e64;
+}
+
+/*Animação do botão menu*/
+.btn-menu-toggle{
+	display: flex;
+}
+.btn-menu-toggle .linha0,.btn-menu-toggle .linha2{
+	width: 0;
+	height: 0;
+	transition: .2s;
+}
+.btn-menu-toggle .linha1{
+	transform: rotate(45deg);
+	transition: .3s
+
+}
+
+.btn-menu-toggle .linha1::after{
+	content: "";
+	width:100%;
+	height: 4px;
+	background-color: #333;
+	position: absolute;
+	top:0;
+	left: 0;
+	transform: rotate(90deg);
+}
