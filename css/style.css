@@ -148,10 +148,10 @@ a{text-decoration: none}
 }
 
 /*itens do menu*/
-.menu li.item-menu{
-	display: block;;
+.menu li{
+	display: block;
 }
-.menu li.item-menu a{
+.menu li a.item-menu{
 	width: 100%;
 	display: flex;
 	justify-content: space-between;
@@ -160,19 +160,44 @@ a{text-decoration: none}
 	color: #333;
 	font-family: 'Roboto', sans-serif;
 }
-.menu li.item-menu a:hover{
+.menu li a.item-menu:hover{
 	background-color: #333;
 	color: #fff;
 }
 
 /*submenu*/
+.btn-submenu{
+	display: block;
+}
+.btn-submenu .icon-submenu{transition: .3s}
+
+.btn-submenu-active .icon-submenu{
+	transform: rotate(90deg);
+	transition: .3s;
+}
+
 .submenu{
 	background-color: #ccc;
 	padding-left: 10px;
+	max-height: 0;
+	overflow: hidden;
+	transition: .5s;
+}
+.submenu li{
+	display: block;
 }
 
-.submenu li.item-submenu a{
+.submenu li a.item-submenu{
+	display: block;
 	background-color: #eee;
+	padding: 10px 20px;
+	color: #333;
+	font-family: 'Roboto', sans-serif;
+	font-size: .9em;
+}
+.submenu li a.item-submenu:hover{
+	background-color: #333;
+	color: #fff;
 }
 /*login cadastro rodapé do menu*/
 .login-cadastro{
