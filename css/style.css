@@ -57,15 +57,15 @@ a{text-decoration: none}
 }
 .btn-menu-toggle .linha1{
 	transform: rotate(45deg);
-	transition: .3s
-
+	transition: .3s;
+	background-color: #fff;
 }
 
 .btn-menu-toggle .linha1::after{
 	content: "";
 	width:100%;
 	height: 4px;
-	background-color: #3c4e64;
+	background-color: #fff;
 	position: absolute;
 	top:0;
 	left: 0;
@@ -130,6 +130,7 @@ a{text-decoration: none}
 .busca-organica{
 	width: 100%;
 	padding: 0 20px;
+	margin-bottom: 30px;
 }
 .busca-organica form{
 	display: flex;
@@ -143,5 +144,65 @@ a{text-decoration: none}
 	padding: 6px 10px;
 	background-color: #333;
 	color: #fff;
+	cursor: pointer;
+}
+
+/*itens do menu*/
+.menu li.item-menu{
+	display: block;;
+}
+.menu li.item-menu a{
+	width: 100%;
+	display: flex;
+	justify-content: space-between;
+	font-size: .9em;
+	padding: 6px 20px;
+	color: #333;
+	font-family: 'Roboto', sans-serif;
+}
+.menu li.item-menu a:hover{
+	background-color: #333;
+	color: #fff;
+}
+
+/*submenu*/
+.submenu{
+	background-color: #ccc;
+	padding-left: 10px;
+}
+
+.submenu li.item-submenu a{
+	background-color: #eee;
+}
+/*login cadastro rodapé do menu*/
+.login-cadastro{
+	width: 100%;
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	display: flex;
+	justify-content: space-between;
+	background-color: #efefef;
+}
+
+.login-cadastro #btn-login {
+	flex: 1;
+	text-align: center;
+	padding: 10px 20px;
+	border-right: 1px solid #ddd;
+	font-family: 'Open Sans', sans-serif;
+	font-size: .9em;
+	color: #333;
+	cursor: pointer;
+}
+
+.login-cadastro #btn-cadastro {
+	display: block;
+	padding: 10px 20px;
+	flex: 1;
+	text-align: center;
+	font-family: 'Open Sans', sans-serif;
+	font-size: .8em;
+	color:#333;
 	cursor: pointer;
 }
