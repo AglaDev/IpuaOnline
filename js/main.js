@@ -63,8 +63,9 @@ function openCloseSubmenu(btn){
 			if(altura){ //caso haja algum submenu aberto ele sera fechado
 
 				submenus[i].style.maxHeight = null
-				iconSubmenuFechado = submenus[i].previousElementSibling.querySelector('.icon-submenu')
+				iconSubmenuFechado = submenus[i].previousElementSibling
 				iconSubmenuFechado.classList.toggle('btn-submenu-active')
+				console.log(iconSubmenuFechado)
 
 			}
 
