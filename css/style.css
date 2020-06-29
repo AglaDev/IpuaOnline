@@ -4,26 +4,22 @@
 	box-sizing: border-box;
 	-webkit-box-sizing: border-box;
 	-moz-box-sizing: border-box;
+	border:none;
 }
 img{width: 100%}
 ul{list-style: none}
 a{text-decoration: none}
 
-.font-o{
-	font-family: 'Open Sans', sans-serif;
-}
-.font-r{
-	font-family: 'Roboto', sans-serif;
-}
+.font-o{font-family: 'Open Sans', sans-serif;}
+.font-r{font-family: 'Roboto', sans-serif;}
 /*CABECALHO*/
-.container{
-	padding: 0 30px;
-}
+.container{padding: 0 30px;}
 .container-cabecalho{
 	box-shadow: 1px 1px 2px #00AAFF;
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
+	position: relative;
 }
 
 #logo{
@@ -36,12 +32,12 @@ a{text-decoration: none}
 .btn-menu{
 	width: 35px;
 	height: 33px;
-	background-color: #fff;
 	cursor: pointer;
 	padding:2px;
 	display: flex;
 	justify-content: space-around;
 	flex-direction: column;
+	z-index: 2;
 }
 
 .btn-menu .linha{
@@ -69,9 +65,83 @@ a{text-decoration: none}
 	content: "";
 	width:100%;
 	height: 4px;
-	background-color: #333;
+	background-color: #3c4e64;
 	position: absolute;
 	top:0;
 	left: 0;
 	transform: rotate(90deg);
+}
+
+
+/*CONFIGURAÇÃO CONTENT MENU*/
+.content-menu{
+	width: 100%;
+	height: 100%;
+	background-color: rgba(0,0,0,0.4);
+	position: fixed;
+	top: 0;
+	left: 0;
+	transform: translateX(-100%);
+	transition: .6s;
+}
+/*content menu*/
+.content-menu-toggle{
+	transform: translateX(-0%);
+	transition: .6s;
+}
+
+/*menu*/
+.content-menu .menu{
+	width: 300px;
+	height: 100%;
+	position: fixed;
+	top:0;
+	left: 0;
+	background-color: #fff;
+	transform: translateX(-100%);
+	transition: .9s;
+}
+.content-menu-toggle .menu{
+	transform: translateX(0%);
+	transition: .9s;
+}
+
+/*midias digitais*/
+.menu .midias-sociais{
+	width: 100%;
+	display: flex;
+	background-color: #FFFFFF;
+	border-bottom: 1px solid #eee;
+	margin-bottom: 20px;
+}
+.menu .midias-sociais li{display: block;flex:1; text-align: center;}
+.menu .midias-sociais li a.icon{
+	padding: 10px;
+	display: block;
+	font-size: 1.5em;
+	cursor: pointer;
+}
+.menu .midias-sociais li a.icon:hover{transform: scale(1.05);}
+.midias-sociais li a.icon-fb{color: #4164ac}
+.midias-sociais li a.icon-insta{color: #f24d57}
+.midias-sociais li a.icon-yt{color: #e93c25}
+
+/*busca organica*/
+.busca-organica{
+	width: 100%;
+	padding: 0 20px;
+}
+.busca-organica form{
+	display: flex;
+}
+.busca-organica form .ipt-busca{
+	padding: 6px;
+	flex:1;
+	border:1px solid #eee;
+}
+.busca-organica form .btn-busca{
+	padding: 6px 10px;
+	background-color: #333;
+	color: #fff;
+	cursor: pointer;
 }
