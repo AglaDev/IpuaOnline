@@ -65,7 +65,6 @@ function openCloseSubmenu(btn){
 				submenus[i].style.maxHeight = null
 				iconSubmenuFechado = submenus[i].previousElementSibling
 				iconSubmenuFechado.classList.toggle('btn-submenu-active')
-				console.log(iconSubmenuFechado)
 
 			}
 
