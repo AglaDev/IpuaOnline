@@ -1,33 +1,30 @@
 window.onload = ()=>{
 
-	//Animações do botão do menu
 
-(function Menu(){ 
-
+function btnMenu(){
 	let btnMenu = document.getElementById('btn-menu')
-	let menu = document.querySelector('.content-menu')
 
-	openCloseMenu(btnMenu,menu)	
+	btnMenu.addEventListener('click', ()=>{
 
-}())
+		btnMenu.classList.toggle('btn-menu-toggle')
 
-//função responsavel de abrir e fechar o menu e mudar o botão
-function openCloseMenu(btnmenu,menu){
-
-	btnmenu.addEventListener('click',()=>{
-
-		btnmenu.classList.toggle('btn-menu-toggle')
-
-		menu.classList.toggle('content-menu-toggle')
-
-
+		openCloseMenu()
 
 	})
 
 }
 
 
-	
+function openCloseMenu(){
+
+	let contentMenu = document.querySelector('.content-menu')
+
+	contentMenu.classList.toggle('content-menu-toggle')
+
+}
+
+
+btnMenu()	
 	
 
 } 
