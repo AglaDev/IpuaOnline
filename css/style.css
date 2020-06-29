@@ -235,3 +235,37 @@ a{text-decoration: none}
 
 
 /*media queries*/
+
+@media screen and (min-width:680px){
+
+	.btn-menu{
+		display: none;
+	}
+
+	.content-menu{
+		transform: translateX(0);
+		position: static;
+	}
+
+	.content-menu .menu{
+		width: 100%;
+		height: auto;
+		position: static;
+		transform: translateX(0);
+		display: flex;
+	}
+
+	.content-menu .menu .midias-sociais{
+		display: none;
+	}
+
+	.content-menu .menu .busca-organica{
+		display: none;
+	}
+
+	.content-menu .menu .login-cadastro{
+		display: none;
+	}
+
+
+}
