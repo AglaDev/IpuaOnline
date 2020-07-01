@@ -240,9 +240,9 @@ a{text-decoration: none}
 	grid-template-columns: [inicio]20px[inicio-temp]1fr[fim-temp]20px[fim];
 	grid-template-rows: 
 						[inicio-destaque1]110px[fim-destaque1]10px
-						[inicio-destaque2]100px[fim-destaque2]10px
-						[inicio-destaque3]100px[fim-destaque3]10px
-						[inicio-destaque4]100px[fim-destaque4]10px
+						[inicio-destaque2]110px[fim-destaque2]10px
+						[inicio-destaque3]110px[fim-destaque3]10px
+						[inicio-destaque4]110px[fim-destaque4]10px
 						;
 }
 
@@ -321,4 +321,28 @@ a{text-decoration: none}
 }
 .bg-destaque-um{
 	background-image: url(../img/destaques/destaque1.jpg);
+}
+
+.destaque-dois{
+	grid-column: inicio-temp/fim-temp;
+	grid-row:inicio-destaque2/fim-destaque2 ;
+}
+.bg-destaque-dois{
+	background-image: url(../img/destaques/destaque2.jpg);
+}
+
+.destaque-tres{
+	grid-column: inicio-temp/fim-temp;
+	grid-row:inicio-destaque3/fim-destaque3;
+}
+.bg-destaque-tres{
+	background-image: url(../img/destaques/destaque3.jpg);
+}
+
+.destaque-quatro{
+	grid-column: inicio-temp/fim-temp;
+	grid-row:inicio-destaque4/fim-destaque4;
+}
+.bg-destaque-quatro{
+	background-image: url(../img/destaques/destaque4.jpg);
 }
