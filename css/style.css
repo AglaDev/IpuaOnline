@@ -271,7 +271,7 @@ a{text-decoration: none}
 	left: 0;
 	right: 0;
 	bottom: 0;
-	background: linear-gradient(0deg,rgba(0,0,0,.4),rgba(0,0,0,.2) 40%,rgba(0,0,0,.7) 80%,rgba(0,0,0,1));;
+	background: linear-gradient(0deg,rgba(0,0,0,.4),rgba(0,0,0,.2) 40%,rgba(0,0,0,.6) 80%,rgba(0,0,0,.9));;
 }
 
 .titles-destaque{
@@ -376,7 +376,7 @@ a{text-decoration: none}
 @media screen and (min-width:520px){
 
 	.content-destaques{
-		grid-template-columns:[inicio]4% [inicio-destaque1] repeat(6, 10px 1fr) [fim-destaque1]2px[inicio-destaques2-3]repeat(3, 10px 1fr)[fim-destaque3]2px[inicio-destaque4]repeat(3, 10px 1fr)[fim-destaques4-2]4%[fim];
+		grid-template-columns:[inicio]4% [inicio-destaque1] repeat(6, 10px 1fr) [fim-destaque1]2px[inicio-destaques2-3]repeat(3, 1fr 10px)[fim-destaque3]2px[inicio-destaque4]repeat(3, 1fr 10px)[fim-destaques4-2]4%[fim];
 		grid-template-rows: [inicio-destaques1-2]30vh[fim-destaque2] 2px [inicio-destaques3-4]30vh[fim-destaques1-3-4]
 		;
 	}
