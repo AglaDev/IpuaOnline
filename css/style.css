@@ -275,6 +275,7 @@ a{text-decoration: none}
 }
 
 .titles-destaque{
+	height: 100%;
 	position: absolute;
 	top: 0;
 	left: 0;
@@ -282,6 +283,7 @@ a{text-decoration: none}
 	flex-direction: column;
 	justify-content: space-between;
 	padding: 10px;
+	padding-bottom: 5px;
 }
 .titles-destaque .categoria-destaque{
 	text-align: right;
