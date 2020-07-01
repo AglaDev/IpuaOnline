@@ -361,7 +361,7 @@ a{text-decoration: none}
 	background-image: url(../img/destaques/destaque4.jpg);
 }
 
-@media screen and (min-width:400px){
+@media screen and (min-width:480px){
 	.content-destaques{
 		grid-template-columns: [inicio]8%[inicio-temp]1fr[fim-temp]8%[fim];
 		grid-template-rows: 
