@@ -285,18 +285,27 @@ a{text-decoration: none}
 	padding: 10px;
 	padding-bottom: 5px;
 }
-.titles-destaque .categoria-destaque{
-	text-align: right;
+.titles-destaque .data-categoria-destaque{
+	display: flex;
+	justify-content: space-between;
+	align-items: flex-start;
 	margin-bottom: 10px;
 }
-.titles-destaque .categoria-destaque span{
+.titles-destaque .data-categoria-destaque span.data{
+	color: #fff;
+	font-family: 'Roboto', sans-serif;
+	font-size: .6em;
+	background-color: rgba(0,0,0,0.5);
+	padding: 5px;
+}
+.titles-destaque .data-categoria-destaque span.categoria{
 	color: #fff;
 	background-color: #00AAFF;
-	padding: 2px;
 	font-family: 'Open Sans' , sans-serif;
-	font-size: .7em;
+	font-size: .6em;
 	font-weight: bolde;
 	border-radius: 3px;
+	padding: 3px;
 }
 .titles-destaque .title-subtitle-destaque{
 	display: flex;
