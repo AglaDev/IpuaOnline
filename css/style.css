@@ -239,7 +239,7 @@ a{text-decoration: none}
 	display: grid;
 	grid-template-columns: [inicio]20px[inicio-temp]1fr[fim-temp]20px[fim];
 	grid-template-rows: 
-						[inicio-destaque1]100px[fim-destaque1]10px
+						[inicio-destaque1]110px[fim-destaque1]10px
 						[inicio-destaque2]100px[fim-destaque2]10px
 						[inicio-destaque3]100px[fim-destaque3]10px
 						[inicio-destaque4]100px[fim-destaque4]10px
@@ -249,6 +249,7 @@ a{text-decoration: none}
 .destaque{
 	position: relative;
 	overflow: hidden;
+	border-radius: 5px;
 }
 
 .destaque:hover .bg-destaque{
@@ -295,8 +296,23 @@ a{text-decoration: none}
 	font-weight: bolde;
 	border-radius: 3px;
 }
+.titles-destaque .title-subtitle-destaque{
+	display: flex;
+	flex-direction: column;
+	padding-left: 8px;
+	border-left: 2px solid #0af;
+}
 
-
+.titles-destaque .title-subtitle-destaque h2{
+	color: #fff;
+	font-family: 'Robot', sans-serif;
+	font-size: 1.2em;
+}
+.titles-destaque .title-subtitle-destaque p{
+	color: #fff;
+	font-family: 'Robot', sans-serif;
+	font-size: .8em;
+}
 
 
 .destaque-um{
