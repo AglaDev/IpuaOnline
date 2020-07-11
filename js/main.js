@@ -76,7 +76,11 @@ function openCloseSubmenu(btn){
 	}
 }
 
+//CONFIGURAÇÃO PARA OS DESTAQUES
+/*
+	*fazer o encutamento do titulo de acordo com o tamanho da tela
 
+*/
 
 
 
