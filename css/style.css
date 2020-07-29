@@ -398,7 +398,7 @@ body{background-color: #efefef;}
 	display: grid;
 	grid-template-columns: [inicio]30px[inicio-temp]1fr[fim-temp]30px[fim];
 	grid-template-rows: 
-		[inicio-content-slider]180px[fim-content-slider]30px
+		[inicio-content-slider]200px[fim-content-slider]30px
 		[inicio-content-noticias]400px[fim-content-noticias]30px
 		[inicio-content-widget]500px[fim-content-widget]
 	;
