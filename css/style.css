@@ -462,8 +462,9 @@ body{background-color: #efefef;}
 .controls-slider li{padding: 2px}
 
 .control{
-	width: 10px;
-	height: 4px;
+	width: 6px;
+	height: 6px;
+	border-radius: 100%;
 	background-color: #ccc;
 	display: block;
 	transition: background-color .3s;
