@@ -9,7 +9,7 @@
 img{width: 100%}
 ul{list-style: none}
 a{text-decoration: none}
-
+body{background-color: #efefef;}
 .font-o{font-family: 'Open Sans', sans-serif;}
 .font-r{font-family: 'Roboto', sans-serif;}
 /*CABECALHO*/
@@ -21,6 +21,7 @@ a{text-decoration: none}
 	align-items: center;
 	position: relative;
 	margin-bottom: 50px;
+	background-color: #fff;
 }
 
 #logo{
@@ -266,6 +267,7 @@ a{text-decoration: none}
 
 /*destaques*/
 .content-destaques{
+	margin-bottom: 50px;
 	display: grid;
 	grid-template-columns: [inicio]30px[inicio-temp]1fr[fim-temp]30px[fim];
 	grid-template-rows: 
@@ -390,6 +392,91 @@ a{text-decoration: none}
 .bg-destaque-quatro{
 	background-image: url(../img/destaques/destaque4.jpg);
 }
+
+/*Configurações do grid slider,noticias e widget*/
+.container-slide-noticia-widgets{
+	display: grid;
+	grid-template-columns: [inicio]30px[inicio-temp]1fr[fim-temp]30px[fim];
+	grid-template-rows: 
+		[inicio-content-slider]180px[fim-content-slider]30px
+		[inicio-content-noticias]400px[fim-content-noticias]30px
+		[inicio-content-widget]500px[fim-content-widget]
+	;
+}
+
+.content-slider{
+	grid-column:inicio/fim;
+	grid-row: inicio-content-slider/fim-content-slider;
+	position: relative;
+	overflow: hidden;
+}
+.sliders{
+	height: 100%;
+	display: flex;
+}
+.sliders .item{
+	min-width: 100%;
+	height: 100%;
+	background-color: #ccc;
+	display: block;
+}
+
+.btn-slider{
+	display: block;
+	color: #333;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	position: absolute;
+	color: #fff;
+	opacity: 0.3;
+	transition: opacity .2s;
+	
+}
+.btn-slider:hover{
+	background: linear-gradient(rgba(0,0,0,0.02),rgba(0,0,0,0.2));
+	opacity: 1;
+}
+.btn-prev{
+	top: 0;
+	left: 0;
+	height: 100%;
+	padding: 20px;
+}
+.btn-next{
+	top: 0;
+	right: 0;
+	height: 100%;
+	padding: 20px;
+}
+
+.controls-slider{
+	width: 100%;
+	display: flex;
+	justify-content: center;
+	background-color: #FFFFFF;
+	position: absolute;
+	left: 0;
+	bottom: 0;
+	list-style: none;
+}
+.controls-slider li{padding: 2px}
+
+.control{
+	width: 10px;
+	height: 4px;
+	background-color: #ccc;
+	display: block;
+	transition: background-color .3s;
+}
+.control:hover{
+	background-color: #333;
+}
+.control-active{
+	background-color: #333;
+}
+
+/*media queries*/
 
 @media screen and (min-width:480px){
 	.content-destaques{
