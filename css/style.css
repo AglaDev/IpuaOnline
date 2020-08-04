@@ -71,39 +71,45 @@ body{background-color: #efefef;}
 	justify-content: space-around;
 	flex-direction: column;
 	z-index: 99;
+	overflow: hidden;
 }
 
 .btn-menu .linha{
 	width: 100%;
 	height: 3px;
 	background-color: #3c4e64;
+	transition: .4s ;
 }
 
 /*Animação do botão menu*/
 .btn-menu-toggle{
 	display: flex;
+	position: relative;
+	overflow: hidden;
+
 }
-.btn-menu-toggle .linha0,.btn-menu-toggle .linha2{
-	width: 0;
-	height: 0;
-	transition: .2s;
+.btn-menu-toggle .linha{
+	transition: .4s;
 }
 .btn-menu-toggle .linha1{
-	transform: rotate(45deg);
-	transition: .3s;
+	transform: translateX(110%);
 	background-color: #fff;
+
+}
+.btn-menu-toggle .linha0{
+	transform: rotate(45deg);
+	position: absolute;
+	background-color: #fff;
+	
+}
+.btn-menu-toggle .linha2{
+	transform: rotate(-45deg);
+	position: absolute;
+	background-color: #fff
 }
 
-.btn-menu-toggle .linha1::after{
-	content: "";
-	width:100%;
-	height: 3px;
-	background-color: #fff;
-	position: absolute;
-	top:0;
-	left: 0;
-	transform: rotate(90deg);
-}
+
+
 
 
 /*CONFIGURAÇÃO CONTENT MENU*/
@@ -134,7 +140,7 @@ body{background-color: #efefef;}
 	background-color: #fff;
 	transform: translateX(-100%);
 	transition: .9s;
-	overflow-y: scroll;
+	overflow-y: auto;
 	display: flex;
 	flex-direction: column;
 	
