@@ -49,7 +49,7 @@
 					<li><a href="#" class="icon icon-insta"><i class="fab fa-instagram"></i></a></li>
 					<li><a href="#" class="icon icon-yt"><i class="fab fa-youtube"></i></a></li>
 				</ul>
-
+				
 				<!--BUSCA ORGANICA-->
 				<div class="busca-organica">
 					<form>
@@ -57,32 +57,47 @@
 						<button class="btn-busca"><i class="fas fa-search"></i></button>
 					</form>
 				</div>
-
-				<!--ITENS DO MENU-->
-				<!--
-				<li><a href="#"  class="item-menu">Home</a></li>
-				<li><a href="#"  class="item-menu">Timeline</a></li>
-
-				<li>
-					<a href="#" class="item-menu btn-submenu">Categorias<span class="icon-submenu"><i class="fas fa-chevron-right"></i></span></a>
-					<ul class="submenu">
-						<li><a href="#" class="item-submenu">Política</a></li>
-						<li><a href="#" class="item-submenu">Esporte</a></li>
-						<li><a href="#" class="item-submenu">Educação</a></li>
-						<li><a href="#" class="item-submenu">Entreternimento</a></li>
-					</ul>
-				</li>
-
-				<li><a href="#"  class="item-menu">Anuncie</a></li>
-				<li><a href="#" class="item-menu btn-submenu">Contato<span class="icon-submenu"><i class="fas fa-chevron-right"></i></span></a>
-					<ul class="submenu">
-						<li><a href="#" class="item-submenu">Whatsapp</a></li>
-						<li><a href="#" class="item-submenu">Email</a></li>
-					</ul>
-				</li>
-				<li><a href="#"  class="item-menu">Sobre</a></li>
 				
-				<li class="content-login-cadastro">
+
+				<!--
+					ITENS DO MENU ADICIONADO
+					DINAMICAMENTE NO JS
+				
+				-->
+				<script>
+			
+					//MENU
+					const btnMenu = document.getElementById('btn-menu')
+					const contenMenu = document.getElementById('content-menu')
+					const menuLista = document.getElementById('menu')
+
+					const menu = new Menu(btnMenu,contenMenu)
+
+					menu.carregaItens(menuLista)
+					menu.toggleBtnSubmenu()
+
+					//MENU ->eventos de clique
+					contenMenu.addEventListener('click',(e)=>{
+					
+						if(e.target.id === 'content-menu'){
+							
+							menu.toggleMenu('btn-menu-toggle','content-menu-toggle')
+						}
+					
+					})
+
+					btnMenu.addEventListener('click',()=>{
+
+						menu.toggleMenu('btn-menu-toggle','content-menu-toggle')
+
+					
+					
+					})
+				
+				
+				</script>
+				<!--BTNS LOGIN\CADASTRO-->
+				<div class="content-login-cadastro">
 					<footer class="login-cadastro">
 						
 						<a href="#" id="btn-login">Entre</a>
@@ -90,8 +105,10 @@
 						<a href="#" id="btn-cadastro">Cadastre-se</a>
 						
 					</footer>
-				</li>
-			-->
+				</div>
+
+				
+
 			</ul>
 
 		</nav>

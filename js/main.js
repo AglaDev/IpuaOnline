@@ -1,32 +1,6 @@
 window.onload =  function(){
 
-//MENU
-const btnMenu = document.getElementById('btn-menu')
-const contenMenu = document.getElementById('content-menu')
-const menuLista = document.getElementById('menu')
 
-const menu = new Menu(btnMenu,contenMenu)
-menu.carregaItens(menuLista)
-menu.toggleBtnSubmenu()
-
-
-//MENU ->eventos de clique
-contenMenu.addEventListener('click',(e)=>{
-
-	if(e.target.id === 'content-menu'){
-		console.log('é o content')
-		menu.toggleMenu('btn-menu-toggle','content-menu-toggle')
-	}
-
-})
-
-btnMenu.addEventListener('click',()=>{
-	
-	menu.toggleMenu('btn-menu-toggle','content-menu-toggle')
-	
-
-
-})
 
 
 }
