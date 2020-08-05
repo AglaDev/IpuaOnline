@@ -1,90 +1,200 @@
-window.onload = ()=>{
+window.onload =  function(){
+
+//MENU
+const btnMenu = document.getElementById('btn-menu')
+const contenMenu = document.getElementById('content-menu')
+const menuLista = document.getElementById('menu')
+
+const menu = new Menu(btnMenu,contenMenu)
+menu.carregaItens(menuLista)
+menu.toggleBtnSubmenu()
 
 
-(function btnMenu(){
-	let btnMenu = document.getElementById('btn-menu')
+//MENU ->eventos de clique
+contenMenu.addEventListener('click',(e)=>{
 
-	btnMenu.addEventListener('click', ()=>{
+	if(e.target.id === 'content-menu'){
+		console.log('é o content')
+		menu.toggleMenu('btn-menu-toggle','content-menu-toggle')
+	}
 
-		btnMenu.classList.toggle('btn-menu-toggle')
+})
 
-		openCloseMenu()
+btnMenu.addEventListener('click',()=>{
+	
+	menu.toggleMenu('btn-menu-toggle','content-menu-toggle')
+	
 
-	})
 
-}())
+})
 
-
-function openCloseMenu(){
-
-	let contentMenu = document.querySelector('.content-menu')
-
-	contentMenu.classList.toggle('content-menu-toggle')
 
 }
 
+function Menu(btn,content,menuLista){
+	this.content = content
+	this.btn = btn
+	this.btnsSubmenus =[]
+	this.submenus = []
+	this.itens = [
+			
+			{	
+				nome:'Home',
+				link:'',
+				subItens:[]
+			},
+			{
+				nome:'Timeline',
+				link:'#',
+				subItens:[] 
+			},
+			{
+				nome:'Categorias',
+				link:'#',
+				subItens:[
+					{
+						nome:'Esporte',
+						link:'#'
+					},
+					{
+						nome:'Politica',
+						link:'#'
+					},
+					{
+						nome:'Educação',
+						link:'#'
+					},
+					{
+						nome:'Entrenimento',
+						link:'#'
+					}
+				]	
+			},
+			{
+				nome:'Anuncie',
+				link:'#',
+				subItens:[]
+			},
+			{
+				nome:'Contato',
+				link:'#',
+				subItens:[
+					{
+						nome:'Email',
+						link:'#'
+					},
+					{
+						nome:'Whatsapp',
+						link:'#'
+					}
+				]
+			},
+			{
+				nome:'Sobre',
+				link:'#',
+				subItens:[]
+			}
 
-(function btnSubmenu(){
+		]
 
-	let btnSubmenu = document.querySelectorAll('.btn-submenu')
+	this.toggleMenu = (classeBtn, classeContent)=>{
 
-	btnSubmenu.forEach( e=>{
+		this.btn.classList.toggle(classeBtn)
+		this.content.classList.toggle(classeContent)
 
-		e.addEventListener('click',()=>{
+	}
 
-			openCloseSubmenu(e)
+	this.carregaItens = (menuLista)=>{
 
-		})
+		//console.log(menuLista)
+		
+		let listaItens = []
 
-	})
+		this.itens.forEach(e=>{
+			listaItens.push(e)
+			let li = document.createElement('li')
+			let a = document.createElement('a')
+			a.setAttribute('href',`${e.link}`)
+			a.classList.add('item-menu')
+			a.innerHTML = e.nome
+			li.appendChild(a)
+			menuLista.appendChild(li)
+			
+			if(e.subItens.length>0){
+				let listaSubitens = e.subItens
+				this.btnsSubmenus.push(a)
+				a.classList.add('btn-submenu')
+				let icon = document.createElement('span')
+				icon.classList.add('icon-submenu')
+				icon.innerHTML += '<i class="fas fa-chevron-right"></i>'
+				a.appendChild(icon)
+				let submenu=document.createElement('ul')
+				submenu.classList.add('submenu')
+				this.submenus.push(submenu)
+				li.appendChild(submenu)
 
-}())
-
-
-function openCloseSubmenu(btn){
-
-
-	let submenu = btn.nextElementSibling
-
-	if(submenu.style.maxHeight){
-
-		submenu.style.maxHeight = null
-		btn.classList.toggle('btn-submenu-active')
-
-	}else{
-		//verificar se há submenu aberto 
-
-		submenus = document.querySelectorAll('.submenu')
-
-		submenus.forEach((e,i)=>{
-			//verifica o maxheight de cada submenu
-			let altura = !!submenus[i].style.maxHeight
-
-			if(altura){ //caso haja algum submenu aberto ele sera fechado
-
-				submenus[i].style.maxHeight = null
-				iconSubmenuFechado = submenus[i].previousElementSibling
-				iconSubmenuFechado.classList.toggle('btn-submenu-active')
-
+				listaSubitens.forEach(e=>{
+					let li = document.createElement('li')
+					let a = document.createElement('a')
+					a.setAttribute('href',`${e.link}`)
+					a.classList.add('item-submenu')
+					a.innerHTML = e.nome
+					li.appendChild(a)
+					submenu.appendChild(li)
+				})
+	
 			}
 
 		})
 
+		//console.log(listaItens)
 
-		submenu.style.maxHeight = submenu.scrollHeight+'px'
-		btn.classList.toggle('btn-submenu-active')
 	}
-}
 
-//CONFIGURAÇÃO PARA OS DESTAQUES
-/*
-	*fazer o encutamento do titulo de acordo com o tamanho da tela
+	this.toggleBtnSubmenu = ()=>{
+		let btns = this.btnsSubmenus
+		btns.forEach(e=>{
+			
+			e.addEventListener('click',()=>{
 
-*/
+				this.abrirSubmenu(e)
+
+			})
+
+		})
+	}
+
+	this.abrirSubmenu = (btn)=>{
+
+		let submenu = btn.nextElementSibling
 
 
+			let alturaSubmenu = !!submenu.style.maxHeight
+			
+			if(alturaSubmenu){
+				submenu.style.maxHeight = null
+				btn.classList.toggle('btn-submenu-active')
+			}else{
+				this.submenus.forEach(e=>{
+					let altura = e.style.maxHeight
 
+					if(altura){
+						e.style.maxHeight = null
+						let btnSubmenuaberto = e.previousElementSibling
+						btnSubmenuaberto.classList.toggle('btn-submenu-active')
+					}
+
+				})
+
+				submenu.style.maxHeight=submenu.scrollHeight+'px'
+				btn.classList.toggle('btn-submenu-active')
+			}
+
+			
+
+	}
 
 	
+	
 
-} 
+}
